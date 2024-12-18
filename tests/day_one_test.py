@@ -29,3 +29,13 @@ def test_calculate_distance_sorts_arrays_before_calculation():
 def test_calculate_distance_gets_the_correct_answer_when_using_distance_data_variable():
   array1, array2 =  DayOne().format_distance_data()
   assert DayOne().calculate_distance(array1, array2) == 2196996
+
+def test_calculate_similarity_score():
+  array1 = [3, 4, 2, 1, 3, 3]
+  array2 = [4, 3, 5, 3, 9, 3]
+
+  assert DayOne().calculate_similarity_score(array1, array2) == 31
+
+def test_calculate_similarity_score_gets_the_correct_answer_when_using_distance_data_variable():
+  array1, array2 =  DayOne().format_distance_data()
+  assert DayOne().calculate_similarity_score(array1, array2) == 23655822

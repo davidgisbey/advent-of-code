@@ -1,3 +1,5 @@
+from collections import Counter
+
 class DayOne:
     DISTANCE_DATA = """
               35446   18696
@@ -1013,3 +1015,7 @@ class DayOne:
       array1.sort()
       array2.sort()
       return sum(abs(a - b) for a, b in zip(array1, array2))
+
+    def calculate_similarity_score(self, array1, array2):
+      counts = Counter(array2)
+      return sum(counts[num] * num for num in array1 if num in counts)
