@@ -1012,13 +1012,4 @@ class DayOne:
     def calculate_distance(self, array1, array2):
       array1.sort()
       array2.sort()
-      distances = []
-
-      for index, int1 in enumerate(array1):
-        int2 = array2[index]
-        if int1 >= int2:
-          distances.append(int1 - int2)
-        else:
-          distances.append(int2 - int1)
-      breakpoint()
-      return sum(distances)
+      return sum(abs(a - b) for a, b in zip(array1, array2))
