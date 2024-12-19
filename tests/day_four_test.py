@@ -13,5 +13,14 @@ def test_detect_xmas_works_horizontally_ltr():
           ["X", "M", "A", "S", "X", "S", "X", "M", "A", "S"],
           ["X", "M", "A", "S", "X", "S", "X", "M", "A", "S"],
          ]
-
   assert(DayFour().detect_xmas_count(data)) == 4
+
+def test_detect_xmas_works_horizontally_ltr_handles_x_being_in_list_3_letters_gracefully():
+  data = [
+    ["S","A","A","X"],
+    ["S","A","X","M"],
+    ["A","X","M","A"],
+    ["X","M","A","S"],
+  ]
+
+  assert(DayFour().detect_xmas_count(data)) == 1
