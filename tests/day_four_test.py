@@ -7,3 +7,11 @@ def test_format_report_data_returns_140_rows_strings():
   allowed_chars = ["X", "M", "A", "S"]
   assert len(formatted_data) == 140
   assert all(el in allowed_chars for el in first_row)
+
+def test_detect_xmas_works_horizontally_ltr():
+  data = [
+          ["X", "M", "A", "S", "X", "S", "X", "M", "A", "S"],
+          ["X", "M", "A", "S", "X", "S", "X", "M", "A", "S"],
+         ]
+
+  assert(DayFour().detect_xmas_count(data)) == 4
