@@ -8,6 +8,7 @@ class DayFour:
     def detect_xmas_count(self, data):
       count = 0
       count += self.__check_row_rtl_count(data)
+      count += self.__check_row_ltr_count(data)
       return count
 
     def __check_row_rtl_count(self, data):
@@ -19,6 +20,20 @@ class DayFour:
                   continue
 
                letters = [letter, row[index + 1], row[index + 2], row[index + 3]]
+               if "".join(letters) == "XMAS":
+                  count += 1
+
+      return count
+
+    def __check_row_ltr_count(self, data):
+      count = 0
+      for row in data:
+         for index, letter in enumerate(row):
+            if letter == "X":
+               if index - 3 < 0:
+                  continue
+
+               letters = [letter, row[index - 1], row[index - 2], row[index - 3]]
                if "".join(letters) == "XMAS":
                   count += 1
 

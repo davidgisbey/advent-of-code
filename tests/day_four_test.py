@@ -24,3 +24,12 @@ def test_detect_xmas_works_horizontally_ltr_handles_x_being_in_list_3_letters_gr
   ]
 
   assert(DayFour().detect_xmas_count(data)) == 1
+
+def test_detect_xmas_works_horizontally_rtl():
+  data = [
+           ["S","A","M","X"],
+           ["S","A","X","M"],
+           ["A","X","M","A"],
+           ["X","M","A","M"],
+         ]
+  assert(DayFour().detect_xmas_count(data)) == 1
