@@ -10,6 +10,7 @@ class DayFour:
       count += self.__check_row_rtl_count(data)
       count += self.__check_row_ltr_count(data)
       count += self.__check_column_top_to_bottom(data)
+      count += self.__check_column_bottom_to_top(data)
       return count
 
     def __check_row_rtl_count(self, data):
@@ -49,6 +50,21 @@ class DayFour:
                     continue
 
                 letters = [letter, data[index + 1][row_index], data[index + 2][row_index], data[index + 3][row_index]]
+
+                if "".join(letters) == "XMAS":
+                    count += 1
+
+        return count
+
+    def __check_column_bottom_to_top(self, data):
+        count = 0
+        for index, row in enumerate(data):
+          for row_index, letter in enumerate(row):
+              if letter == "X":
+                if index - 3 < 0:
+                    continue
+
+                letters = [letter, data[index -1 ][row_index], data[index - 2][row_index], data[index - 3][row_index]]
 
                 if "".join(letters) == "XMAS":
                     count += 1

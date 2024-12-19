@@ -42,3 +42,12 @@ def test_detect_xmas_works_vertically_top_to_bottom():
            ["S","S","S","X"],
          ]
   assert(DayFour().detect_xmas_count(data)) == 1
+
+def test_detect_xmas_works_vertically_bottom_to_top():
+  data = [
+           ["S","S","S","X"],
+           ["A","A","X","A"],
+           ["M","X","A","M"],
+           ["X","A","M","M"],
+         ]
+  assert(DayFour().detect_xmas_count(data)) == 1
